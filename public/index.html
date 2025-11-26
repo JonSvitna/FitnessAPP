@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="FitnessApp">
+    <title>Fitness App</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" href="icon-192.svg">
+    <link rel="manifest" href="manifest.json">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>🏋️ Fitness App</h1>
+            <p class="subtitle">Track your fitness journey</p>
+        </header>
+
+        <main class="main-content">
+            <section class="stats-section">
+                <h2>Today's Stats</h2>
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <span class="stat-icon">🔥</span>
+                        <span class="stat-value" id="calories">0</span>
+                        <span class="stat-label">Calories</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">👣</span>
+                        <span class="stat-value" id="steps">0</span>
+                        <span class="stat-label">Steps</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">⏱️</span>
+                        <span class="stat-value" id="minutes">0</span>
+                        <span class="stat-label">Minutes</span>
+                    </div>
+                    <div class="stat-card">
+                        <span class="stat-icon">💪</span>
+                        <span class="stat-value" id="workouts">0</span>
+                        <span class="stat-label">Workouts</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="workouts-section">
+                <h2>Quick Workouts</h2>
+                <div class="workout-list">
+                    <button class="workout-btn" onclick="startWorkout('cardio')">
+                        <span class="workout-icon">🏃</span>
+                        <span class="workout-name">Cardio</span>
+                        <span class="workout-duration">30 min</span>
+                    </button>
+                    <button class="workout-btn" onclick="startWorkout('strength')">
+                        <span class="workout-icon">🏋️</span>
+                        <span class="workout-name">Strength</span>
+                        <span class="workout-duration">45 min</span>
+                    </button>
+                    <button class="workout-btn" onclick="startWorkout('yoga')">
+                        <span class="workout-icon">🧘</span>
+                        <span class="workout-name">Yoga</span>
+                        <span class="workout-duration">20 min</span>
+                    </button>
+                    <button class="workout-btn" onclick="startWorkout('hiit')">
+                        <span class="workout-icon">⚡</span>
+                        <span class="workout-name">HIIT</span>
+                        <span class="workout-duration">15 min</span>
+                    </button>
+                </div>
+            </section>
+
+            <section class="log-section">
+                <h2>Log Activity</h2>
+                <form id="activity-form" onsubmit="logActivity(event)">
+                    <div class="form-group">
+                        <label for="activity-type">Activity Type</label>
+                        <select id="activity-type" required>
+                            <option value="">Select activity...</option>
+                            <option value="running">Running</option>
+                            <option value="walking">Walking</option>
+                            <option value="cycling">Cycling</option>
+                            <option value="swimming">Swimming</option>
+                            <option value="weightlifting">Weightlifting</option>
+                            <option value="yoga">Yoga</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="duration">Duration (minutes)</label>
+                        <input type="number" id="duration" min="1" max="300" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="calories-burned">Calories Burned</label>
+                        <input type="number" id="calories-burned" min="0" max="5000">
+                    </div>
+                    <button type="submit" class="submit-btn">Log Activity</button>
+                </form>
+            </section>
+
+            <section class="history-section">
+                <h2>Recent Activities</h2>
+                <div id="activity-history" class="activity-list">
+                    <p class="empty-state">No activities logged yet. Start your fitness journey!</p>
+                </div>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <p>© 2025 Fitness App. Stay fit, stay healthy!</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

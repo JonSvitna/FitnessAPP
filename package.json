@@ -1,0 +1,24 @@
+{
+  "name": "fitness-app",
+  "version": "1.0.0",
+  "description": "Fitness App - A web application for tracking fitness activities",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "keywords": [
+    "fitness",
+    "health",
+    "workout",
+    "tracker"
+  ],
+  "author": "JonSvitna",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
