@@ -30,3 +30,16 @@ Thumbs.db
 # Build output
 dist/
 build/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.db
+*.sqlite3
+.Python
+*.egg-info/
+.eggs/
+venv/
+.venv/
