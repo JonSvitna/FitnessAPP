@@ -1,0 +1,6 @@
+{
+  "runtime": {
+    "name": "node",
+    "version": "20.19.0"
+  }
+}
