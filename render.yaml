@@ -50,7 +50,7 @@ services:
     plan: free
     rootDir: frontend
     buildCommand: npm install && npm run build
-    startCommand: npm run preview
+    startCommand: npm start
     envVars:
       - key: VITE_API_URL
         sync: false

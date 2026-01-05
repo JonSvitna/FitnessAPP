@@ -196,7 +196,7 @@ Sign up at [railway.app](https://railway.app)
 - Add a new service for the frontend
 - Set root directory to `/frontend`
 - Set build command: `npm run build`
-- Set start command: `npm run preview`
+- Set start command: `npm start`
 - Add `VITE_API_URL` pointing to your backend URL
 
 ### 6. Initialize the database

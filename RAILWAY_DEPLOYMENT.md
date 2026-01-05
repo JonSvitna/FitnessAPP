@@ -96,7 +96,7 @@ Alternatively, you can use the Railway web terminal or run it locally with produ
    - **Service Name**: `fitness-frontend`
    - **Root Directory**: `/frontend`
    - **Build Command**: `npm install && npm run build`
-   - **Start Command**: `npm run preview`
+   - **Start Command**: `npm start`
 
 4. Add environment variables:
    ```
