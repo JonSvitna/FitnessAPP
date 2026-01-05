@@ -1,5 +1,6 @@
 # Dependencies
 node_modules/
+*/node_modules/
 
 # Logs
 logs
@@ -16,6 +17,7 @@ pids
 .env
 .env.local
 .env.*.local
+*/. env
 
 # Editor directories
 .idea/
@@ -30,6 +32,8 @@ Thumbs.db
 # Build output
 dist/
 build/
+*/dist/
+*/build/
 
 # Python
 __pycache__/
@@ -43,3 +47,16 @@ __pycache__/
 .eggs/
 venv/
 .venv/
+
+# Frontend specific
+frontend/dist/
+frontend/build/
+frontend/.vite/
+
+# Backend specific
+backend/uploads/
+*.pdf
+
+# Test coverage
+coverage/
+.nyc_output/

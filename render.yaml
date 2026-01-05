@@ -1,11 +1,64 @@
+# Railway Deployment Configuration
+# Note: Railway doesn't use YAML config files by default
+# Configure services through Railway dashboard:
+# 
+# Backend Service:
+# - Root Directory: /backend
+# - Build Command: npm install
+# - Start Command: npm start
+# - Environment Variables: See backend/.env.example
+#
+# Frontend Service:
+# - Root Directory: /frontend  
+# - Build Command: npm run build
+# - Start Command: npm run preview
+# - Environment Variables: VITE_API_URL=<backend-url>/api
+#
+# Database:
+# - Add PostgreSQL plugin from Railway
+# - Use DATABASE_URL in backend environment
+
+# Alternative: Render.com deployment
 services:
+  # Backend API
   - type: web
-    name: fitness-app
+    name: fitness-app-backend
     runtime: node
     plan: free
+    rootDir: backend
     buildCommand: npm install
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
+      - key: DATABASE_URL
+        sync: false
+      - key: JWT_SECRET
+        generateValue: true
+      - key: OPENAI_API_KEY
+        sync: false
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: FRONTEND_URL
+        sync: false
     healthCheckPath: /api/health
+
+  # Frontend
+  - type: web
+    name: fitness-app-frontend
+    runtime: node
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm run preview
+    envVars:
+      - key: VITE_API_URL
+        sync: false
+
+  # Database
+  - type: pserv
+    name: fitness-app-db
+    runtime: postgresql
+    plan: free
+    ipAllowList: []
+
