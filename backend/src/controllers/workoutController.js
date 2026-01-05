@@ -70,9 +70,11 @@ Format the response as a structured workout plan that can be easily followed.`;
 
     console.log('Calling OpenAI API...');
     
+    const openaiModel = process.env.OPENAI_MODEL || "gpt-3.5-turbo";
+    
     // Call OpenAI API
     const completion = await openai.chat.completions.create({
-      model: "gpt-3.5-turbo",
+      model: openaiModel,
       messages: [
         {
           role: "system",
